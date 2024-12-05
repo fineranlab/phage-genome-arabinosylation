@@ -1,0 +1,28 @@
+name: arabinosylation-anti-crispr
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-base
+  - r-readxl
+  - r-dplyr
+  - r-tidyr
+  - r-rentrez
+  - r-ggplot2
+  - r-ggrepel
+  - r-cowplot
+  - r-viridis
+  - r-pheatmap
+  - bioconductor-complexheatmap
+  - r-ape
+  - bioconductor-treeio
+  - bioconductor-ggtree
+  - r-tidytree
+  - r-igraph
+  - r-data.table
+  - r-remotes
+  - r-devtools
+  - ncbi-datasets-cli
+  - jupyter
+  - r-irkernel
