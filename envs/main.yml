@@ -10,11 +10,17 @@ dependencies:
   - r-tidyr
   - r-rentrez
   - r-ggplot2
+  - r-gggenes
+  - r-sf
+  - r-spdata
+  - r-maps
+  - r-mapproj
   - r-ggrepel
   - r-cowplot
   - r-viridis
   - r-pheatmap
   - bioconductor-complexheatmap
+  - bioconductor-biostrings
   - r-ape
   - bioconductor-treeio
   - bioconductor-ggtree

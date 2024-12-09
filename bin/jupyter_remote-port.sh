@@ -10,8 +10,7 @@
 #SBATCH --time=48:00:00
 #SBATCH --mem=256G
 
-# Conda initialize #########################################
-
+# Initialize conda -----------------------------------------
 __conda_setup="$('/home/$USER/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -24,11 +23,18 @@ else
 fi
 unset __conda_setup
 
-# Variables ################################################
-env="arabinosylation-anti-crispr"
-port="930314"
+# Create log -----------------------------------------------
+if [ ! -d log/ ]; then
+  echo "Creating directory for log files."
+  mkdir log/
+fi
 
-# Main program #############################################
+
+# Variables ------------------------------------------------
+env="arabinosylation-anti-crispr"
+port="9303"
+
+# Main program ---------------------------------------------
 unset PYTHONPATH
 hostname
 echo $port

@@ -5,4 +5,5 @@ data/
 analysis/
 
 # Jupyter checkpoints
+.ipynb_checkpoints/
 bin/.ipynb_checkpoints/
