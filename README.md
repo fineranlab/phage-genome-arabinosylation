@@ -34,6 +34,7 @@ To reproduce the analysis please
    mamba env create -f envs/main.yml
    ```
 1. Download genomes
+
    At the moment, the best way to download genomes is using the script bin/fetch_ncbi-genomes-by-accession.sh.
    This task is currently wrapped in a jupyter notebook that fetches all phage accession IDs via ENTREZ. It also loads accessions IDs from the supplementary table 'phages'.
    Accession IDs are exported as txt files and passed to the bash script. 
