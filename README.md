@@ -11,18 +11,21 @@ This repository contains the code for the bioinformatics analysis included in [M
 
 ## Usage
 To reproduce the analysis please
-1. Install [conda](https://docs.conda.io/en/latest/miniconda.html#) (follow instructions and accept defaults)
-   ```
-   curl -o miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-   bash miniconda.sh
-   rm miniconda.sh
-   source ~/miniconda3/bin/activate
-   ```
-1. Install [mamba](https://mamba.readthedocs.io/en/latest/installation.html)
-   ```
-   conda install -c bioconda mamba -y
-   mamba init
-   ```
+
+### Install [conda](https://docs.conda.io/en/latest/miniconda.html#) (follow instructions and accept defaults)
+```
+curl -o miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash miniconda.sh
+rm miniconda.sh
+source ~/miniconda3/bin/activate
+```
+
+### Install [mamba](https://mamba.readthedocs.io/en/latest/installation.html)
+```
+conda install -c bioconda mamba -y
+mamba init
+```
+
 1. Clone and enter the git repository (if you want to specify the directory replace '~' with your local path)
    ```
    cd ~
