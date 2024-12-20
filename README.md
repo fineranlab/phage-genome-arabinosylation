@@ -43,7 +43,7 @@ To reproduce the analysis please
    > Accession IDs are exported as txt files and passed to the bash script. 
 1. Import genomes for analysis
    ```
-   jupyter execute query_ncbi-genomes.ipynb
+   jupyter execute import_ncbi_phage-genomes.ipynb
    ```
    > So far this lacks a lot... . Generally import depends on the file structure specifications and I have to better describe the options (A,B,C).
    > Currently I try defining a base structure that works for a single genome but also groups. This should have a simple import function that can be call iteratively for many groups (min.size = 1).
