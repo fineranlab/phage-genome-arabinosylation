@@ -3,6 +3,7 @@ channels:
   - conda-forge
   - bioconda
   - defaults
+  - padlocbio
 dependencies:
   - r-base
   - r-readxl
@@ -32,3 +33,10 @@ dependencies:
   - ncbi-datasets-cli
   - jupyter
   - r-irkernel
+  - blast
+  - r-rblast
+  - padloc
+  - r-bio3d
+  - bioconductor-msa
+  - r-ape
+  - muscle

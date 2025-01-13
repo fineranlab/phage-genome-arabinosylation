@@ -1,38 +1,41 @@
-# Arabinosyl-hydroxy-cytosine DNA modification enables phages to evade DNA-targeting but not RNA-targeting CRISPR-Cas
-This repository contains the code for the bioinformatics analysis included in [Mahler _et al._ 2025](link).
+# NCBI Datasets
 
-## Structure
-* `bin/` - Scripts used for the analysis
-* `docs/` - Document files
-* `data/` - Data output (large, not included in **git**)
-* `analysis/` - Analysis output (not included in **git**)
-* `envs/` - **conda** environment YAML files
-* `LICENSE` - The project license
+https://www.ncbi.nlm.nih.gov/datasets
 
-## Usage
-To reproduce the analysis please
-1. Install [conda](https://docs.conda.io/en/latest/miniconda.html#) (follow instructions and accept defaults)
-   ```
-   curl -o miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-   bash miniconda.sh
-   rm miniconda.sh
-   source ~/miniconda3/bin/activate
-   ```
-1. Install [mamba](https://mamba.readthedocs.io/en/latest/installation.html)
-   ```
-   conda install -c bioconda mamba -y
-   mamba init
-   ```
-1. Clone and enter the git repository (if you want to specify the directory replace '~' with your local path)
-   ```
-   cd ~
-   git clone https://github.com/fineranlab/arabinosylation-anti-CRISPR.git
-   cd arabinosylation-anti-CRISPR
-   ```
-1. Create conda environments
-   ```
-   mamba env create -f envs/main.yml
-   ```
+This zip archive contains an NCBI Datasets Data Package.
 
-## Citation
-If you re-use code from this analysis please cite ...
+NCBI Datasets Data Packages can include sequence, annotation and other data files, and metadata in one or more data report files.
+Data report files are in JSON Lines format.
+
+---
+## FAQs
+### Where is the data I requested?
+
+Your data is in the subdirectory `ncbi_dataset/data/` contained within this zip archive.
+
+### I still can't find my data, can you help?
+
+We have identified a bug affecting Mac Safari users. When downloading data from the NCBI Datasets web interface, you may see only this README file after the download has completed (while other files appear to be missing).
+As a workaround to prevent this issue from recurring, we recommend disabling automatic zip archive extraction in Safari until Apple releases a bug fix.
+For more information, visit:
+https://www.ncbi.nlm.nih.gov/datasets/docs/reference-docs/mac-zip-bug/
+
+### How do I work with JSON Lines data reports?
+
+Visit our JSON Lines data report documentation page:
+https://www.ncbi.nlm.nih.gov/datasets/docs/v2/tutorials/working-with-jsonl-data-reports/
+
+### What is NCBI Datasets?
+
+NCBI Datasets is a resource that lets you easily gather data from across NCBI databases. Find and download gene, transcript, protein and genome sequences, annotation and metadata.
+
+### Where can I find NCBI Datasets documentation?
+
+Visit the NCBI Datasets documentation pages:
+https://www.ncbi.nlm.nih.gov/datasets/docs/
+
+---
+
+National Center for Biotechnology Information
+National Library of Medicine
+info@ncbi.nlm.nih.gov

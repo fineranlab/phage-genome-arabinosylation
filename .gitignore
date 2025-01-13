@@ -10,3 +10,9 @@ bin/.ipynb_checkpoints/
 
 # log files
 log/
+
+# Archived scripts
+bin/archive/
+
+# Trash (to be trashed)
+trash/
