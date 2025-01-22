@@ -40,3 +40,5 @@ dependencies:
   - bioconductor-msa
   - r-ape
   - muscle
+  - r-irlba
+  - bioconductor-bluster
