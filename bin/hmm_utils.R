@@ -118,13 +118,23 @@ annotate_gene_by_hmm_profile <- function(object=NULL, gene=NULL, annotation='ann
     aa <- AAStringSet(aa)
     writeXStringSet(aa, fn.faa)
 
-    ## Run MSA
-    msa_call <- paste0('muscle -align ',fn.faa,' -output ',fn.ali)
-    system(msa_call, intern=TRUE)
-    
-    ## Build profile HMM
-    hmmbuild <- paste0('hmmbuild ',fn.hmm,' ',fn.ali)
-    system(hmmbuild, intern=TRUE)
+    if (length(aa) > 1) {
+
+        ## Run MSA
+        msa_call <- paste0('muscle -align ',fn.faa,' -output ',fn.ali)
+        system(msa_call, intern=TRUE)
+        
+        ## Build profile HMM
+        hmmbuild <- paste0('hmmbuild ',fn.hmm,' ',fn.ali)
+        system(hmmbuild, intern=TRUE)
+        
+    } else {
+
+        ## Build profile HMM from single sequence
+        hmmbuild <- paste0('hmmbuild ',fn.hmm,' ',fn.faa)
+        system(hmmbuild, intern=TRUE)
+        
+    }
     
     ## HMM search
     hmmsearch <- paste0('hmmsearch -o ',fn.result,' ',fn.hmm,' ',search_db)
@@ -141,7 +151,7 @@ annotate_gene_by_hmm_profile <- function(object=NULL, gene=NULL, annotation='ann
     plot <- ggplot(result, aes(-log10(full_sequence_E_value))) +
       geom_histogram(bins = 100, col = 'black', fill = 'grey90') +
       scale_x_continuous(limits = c(0, NA)) +
-      geom_vline(xintercept = -log10(1e-20), col = 'darkorange', size = 1) +
+      geom_vline(xintercept = -log10(e_value_treshold), col = 'darkorange', size = 1) +
       theme_classic(20) +
       theme(
           panel.grid.major.y = element_line()
