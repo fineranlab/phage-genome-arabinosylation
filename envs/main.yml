@@ -42,3 +42,5 @@ dependencies:
   - muscle
   - r-irlba
   - bioconductor-bluster
+  - jellyfish
+  - kraken2

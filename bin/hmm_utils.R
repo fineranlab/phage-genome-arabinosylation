@@ -32,6 +32,14 @@ read_HMMsearch <- function(file=NULL) {
     ## Bottom
     tbl_bottom <- which(result == "")
     tbl_bottom <- tbl_bottom[which(tbl_bottom > tbl_top)[1]] -1
+
+    # EXIT 1
+    if (is.na(tbl_bottom)) {
+        msg <- 'No entries in HMMsearch output. Returning NULL.'
+        warning(msg)
+        return(NULL)
+    }
+    
     ## Subset
     index <- seq(tbl_top, tbl_bottom, by = 1)
     table <- result[index]
@@ -70,19 +78,27 @@ read_HMMsearch <- function(file=NULL) {
         table[[n]] <- as.numeric(table[[n]])
     }
 
+    # EXIT 0
     return(table)
 }
 
 #' Clean phage annotations using HMM profiles
 #'
-#' @param
-#' @param
-#' @param
+#' @param object Data.frame of genomic features
+#' @param gene Name of gene to annotate
+#' @param annotation Column name of gene annotations
+#' @param search_db File name of protein database
+#' @param e_value_treshold Numeric value to filter result
+#' @param n_cores Number of CPU cores to use for HMMER
+#' @param dir Directory for intermediate files
+#' @param print_histogram Boolean whether to print histogram of E-values
+#'
+#' @returns data.frame of HMMsearch results
 #'
 #' @export
 annotate_gene_by_hmm_profile <- function(object=NULL, gene=NULL, annotation='annotation', 
-                                         search_db=NULL, e_value_treshold = 1e-20,
-                                         dir=tempdir()
+                                         search_db=NULL, e_value_treshold = 1e-2, n_cores=1,
+                                         dir=tempdir(), print_histogram = TRUE
                                         ) {
 
     # Check input
@@ -99,8 +115,8 @@ annotate_gene_by_hmm_profile <- function(object=NULL, gene=NULL, annotation='ann
     } else {
         dir <- paste0(dir,'/')
     }
-    out_ann <- paste0(dir, 'annotation/')
-    dir.create(out_ann)
+    out_ann <- dir
+    dir.create(out_ann, showWarnings = FALSE)
 
     # Filter
     subset <- object[object[[annotation]] == gene,]
@@ -125,26 +141,33 @@ annotate_gene_by_hmm_profile <- function(object=NULL, gene=NULL, annotation='ann
         system(msa_call, intern=TRUE)
         
         ## Build profile HMM
-        hmmbuild <- paste0('hmmbuild ',fn.hmm,' ',fn.ali)
+        hmmbuild <- paste0('hmmbuild',' --cpu ',n_cores,' ',fn.hmm,' ',fn.ali)
         system(hmmbuild, intern=TRUE)
         
     } else {
 
         ## Build profile HMM from single sequence
-        hmmbuild <- paste0('hmmbuild ',fn.hmm,' ',fn.faa)
+        hmmbuild <- paste0('hmmbuild',' --cpu ',n_cores,' ',fn.hmm,' ',fn.faa)
         system(hmmbuild, intern=TRUE)
         
     }
     
     ## HMM search
-    hmmsearch <- paste0('hmmsearch -o ',fn.result,' ',fn.hmm,' ',search_db)
+    hmmsearch <- paste0('hmmsearch',' --cpu ',n_cores,' -o ',fn.result,' ',fn.hmm,' ',search_db)
     system(hmmsearch, intern=TRUE)
     
     ## Read output
-    result <- read_HMMsearch(fn.result)
+    result <- suppressWarnings(read_HMMsearch(fn.result))
 
+    ## EXIT 1
+    if (is.null(result)) {
+        msg <- 'Received NULL entries from read_HMMsearch. Returning NULL.'
+        warning(msg)
+        return(NULL)
+    }
+    
     ## Get significant results
-    index <- which(result$full_sequence_E_value < e_value_treshold)
+    index <- which(result[['full_sequence_E_value']] < e_value_treshold)
     
     ## Investigate hit distribution
     n_hits <- length(index)
@@ -157,10 +180,14 @@ annotate_gene_by_hmm_profile <- function(object=NULL, gene=NULL, annotation='ann
           panel.grid.major.y = element_line()
       ) +
       labs(y = 'Number of proteins', title = 'E value distribution of HMMsearch', subtitle = paste0('Gene "',gene,'" gave ',n_hits,' significant hits'))
-    print(plot)
+
+    if (print_histogram) {
+        print(plot)
+    }
     
     ## Filter result
     result <- result[index, ]
-    
+
+    # EXIT 0
     return(result)
 }

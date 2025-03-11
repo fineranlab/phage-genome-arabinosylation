@@ -191,3 +191,152 @@ download_ncbi_genomes <- function(inputfile=NULL,
     
     cat('Done.')
 }
+
+#' Extract attributes from GFF3
+#'
+#' Extract values from GFF3 attributes and add columns to object
+#'
+#' @param object Data.frame formatted as GFF3
+#' @param attribute_key String appended to columns to indicate they are extracted from 'attributes'
+#'
+#' @returns data.frame
+#'
+#' @export
+extract_gff3_attributes <- function(object=NULL, attribute_key='attribute_') {
+
+    stopifnot(
+        !is.null(object),
+        class(object) == 'data.frame'
+    )
+
+    # Checks
+    if (!'attributes' %in% names(object)) {
+        msg <- 'Column attributes not present in GFF3 file. Aborting.'
+        stop(msg)
+    }
+
+    # Extract attributes
+    x <- str_split(object[['attributes']], ';')
+
+    # Format attributes
+    ## For each list entry
+    attr_names <- c()
+    for (i in 1:length(x)) {
+        v <- x[[i]]
+        n <- length(v)
+        v_values <- character(length = n)
+        v_names <- character(length = n)
+        # For each vector item
+        for (j in 1:length(v)) {
+            vj <- v[[j]]
+            ss <- str_split(vj,'=')
+            v_values[[j]] <- ss[[1]][[2]] # Righthand side becomes value
+            v_names[[j]] <- ss[[1]][[1]] # Lefthand side becomes name
+        }
+        v <- v_values
+        names(v) <- v_names
+    
+        # Store unique entry names
+        ind <- which(!v_names %in% attr_names)
+        attr_names <- c(attr_names, v_names[ind])
+    
+        # Return formatted vector
+        x[[i]] <- v
+    }
+
+    # Check for duplicated column names
+    if (any(attr_names %in% names(object))) {
+        msg <- 'Conflicting attribute names. Appending attribute_ to each new column'
+        warning(msg)
+        stop('Not yet implemented.')
+    }
+
+    # Return attributes to object
+    ## For each attribute
+    for (i in attr_names) {
+        key <- paste0(attribute_key,i)
+        object[[key]] <- NA
+        # For each row
+        for (j in 1:length(x)) {
+            if (i %in% names(x[[j]])) {
+                object[j,key] <- x[[j]][[i]]
+            }
+        }
+    }
+
+    return(object)
+}
+
+#' Read GFF3 file
+#'
+#' Read file formatted as GFF3 (https://gmod.org/wiki/GFF3#GFF3_Annotation_Section)
+#'
+#' @param file Path to file
+#' @param keep_fasta_sequence_as_attributes Boolean value to indicate whether to keep
+#' appended FASTA sequences as attributes to the returned data.frame
+#'
+#' @returns data.frame
+#'
+#' @export
+read_gff3 <- function(file=NULL, keep_fasta_sequences_as_attributes=FALSE) {
+
+    stopifnot(
+        !is.null(file),
+        file.exists(file)
+    )
+
+    # Variables
+    gff3_column_names <- c('seqid','source','type','start','end','score','strand','phase','attributes')
+
+    # Read flat file
+    flat <- readLines(file)
+
+    ## Check for version
+    version <- flat[[1]]
+    if (version == '##gff-version 3') {
+        message('Reading gff-version 3.')
+    } else {
+        msg <- paste0('Unknown header: ', print(version),'. Aborting.')
+        stop(msg)
+    }
+    
+    # Detect FASTA sequences
+    fasta <- stringr::str_detect(flat, '^##FASTA')
+    if (any(fasta)) {
+        if (keep_fasta_sequences_as_attributes) {
+            msg <- 'FASTA sequences present. Will be returned as attributes.'
+            warning(msg)
+        } else {
+            msg <- 'FASTA sequences present. Will be removed.'
+            warning(msg)
+        }
+        fa_start <- which(fasta)
+        gff_start <- 1
+        gff_stop <- fa_start-1
+        flat <- flat[gff_start:gff_stop]
+    }
+
+    # Remove sequence regions
+    seq_region <- stringr::str_which(flat, '^##sequence-region')
+    flat <- flat[-seq_region]
+    
+    # Extract and print header
+    header_region <- stringr::str_which(flat, '^#')
+    header <- flat[header_region]
+    header <- paste(header, collapse='\n')
+    cat('\n', header, '\n\n')
+    
+    # Create object
+    object <- read.table(text=flat, header = FALSE, sep = '\t', comment.char = '#', col.names = gff3_column_names)
+    if (any(fasta) & keep_fasta_sequences_as_attributes) {
+        attr(object, 'fasta') <- Biostrings::readDNAStringSet(file, seek.first.rec = TRUE)
+    }
+
+    # Extract attributes
+    object <- extract_gff3_attributes(object)
+
+    # View
+    str(object, max.level = 1)
+
+    return(object)
+}
