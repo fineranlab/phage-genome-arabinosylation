@@ -3,8 +3,8 @@ This repository contains the code for the bioinformatics analysis included in [M
 
 ## Structure
 * `bin/` - Scripts used for the analysis
-* `docs/` - Document files
-* `data/` - Data output (large, not included in **git**)
+* `docs/` - Supplementary tables
+* `data/` - Raw data and intermediates (large, not included in **git**)
 * `analysis/` - Analysis output (not included in **git**)
 * `envs/` - **conda** environment YAML files
 * `LICENSE` - The project license
