@@ -1,4 +1,4 @@
-# Arabinosyl-hydroxy-cytosine DNA modification enables phages to evade DNA-targeting but not RNA-targeting CRISPR-Cas
+# Phage arabinosyl-hydroxy-cytosine DNA modifications result in distinct evasion and sensitivity responses to phage defence systems
 This repository contains the code for the bioinformatics analysis included in [Mahler _et al._ 2025](link).
 
 ## Structure
