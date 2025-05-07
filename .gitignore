@@ -11,6 +11,10 @@ bin/.ipynb_checkpoints/
 # log files
 log/
 
+# docs/
+docs/summary*
+docs/all_figures.*
+
 # Archived scripts
 bin/archive/
 
