@@ -1,5 +1,5 @@
 # Phage arabinosyl-hydroxy-cytosine DNA modifications result in distinct evasion and sensitivity responses to phage defence systems
-This repository contains the code for the bioinformatics analysis included in [Mahler _et al._ 2025](link).
+This repository contains the code for the bioinformatics analysis included in [Mahler _et al._ 2025](https://doi.org/10.1016/j.chom.2025.06.005).
 
 ## Structure
 * `bin/` - Scripts used for the analysis
