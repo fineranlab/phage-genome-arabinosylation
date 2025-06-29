@@ -46,4 +46,5 @@ To reproduce the analysis please
    > Analysis of genes involved in DNA arabinosylation in multiple collections of phage genomes
 
 ## Citation
-If you re-use code from this analysis please cite ...
+If you re-use code from this analysis please cite
+> Mahler, Marina et al. “Phage arabinosyl-hydroxy-cytosine DNA modifications result in distinct evasion and sensitivity responses to phage defense systems.” Cell host & microbe, S1931-3128(25)00234-3. 24 Jun. 2025, doi:10.1016/j.chom.2025.06.005
