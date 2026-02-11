@@ -1,5 +1,5 @@
 force_strand: FALSE
-maximum_separation: 4
+maximum_separation: 100
 minimum_core: 4
 minimum_total: 4
 core_genes:
