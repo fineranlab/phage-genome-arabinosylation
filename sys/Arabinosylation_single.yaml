@@ -1,10 +1,8 @@
 force_strand: FALSE
 maximum_separation: 100
-minimum_core: 1
-minimum_total: 7
+minimum_core: 4
+minimum_total: 6
 core_genes:
-  - aat
-secondary_genes:
   - thymidylate_kinase
   - putative_glycosyltransferase
   - dCMP_hydroxylase
@@ -12,11 +10,13 @@ secondary_genes:
   - NTP_transferase
   - phophoheptose_isomerase
   - arabinose_isomerase
+secondary_genes:
   - dCTPase
   - dNMP_kinase
 neutral_genes:
   - NA
 prohibited_genes:
+  - aat
   - aat_1
   - aat_2
   - dCMP_hydroxymethylase
