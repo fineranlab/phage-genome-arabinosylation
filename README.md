@@ -7,6 +7,7 @@ This repository contains the code for the bioinformatics analysis included in [M
 * `data/` - Raw data and intermediates (large, not included in **git**)
 * `analysis/` - Analysis output (not included in **git**)
 * `envs/` - **conda** environment YAML files
+* `sys/` - **padloc** system definitions
 * `LICENSE` - The project license
 
 ## Usage
