@@ -9,7 +9,9 @@ core_genes:
   - alpha_glucosyltransferase
   - beta_glucosyltransferase
 secondary_genes:
+  - NA
 neutral_genes:
+  - NA
 prohibited_genes:
   - peptidase_U32
   - dCMP_hydroxylase
