@@ -1,0 +1,22 @@
+force_strand: FALSE
+maximum_separation: 3
+minimum_core: 4
+minimum_total: 4
+core_genes:
+  - dCMP_hydroxylase
+  - arabinose_isomerase
+  - phophoheptose_isomerase
+  - NTP_transferase
+  - thymidylate_kinase
+secondary_genes:
+  - aat
+  - aat_1
+  - aat_2
+neutral_genes:
+  - dNMP_kinase
+  - dCTPase
+  - peptidase_U32
+prohibited_genes:
+  - alpha_glucosyltransferase
+  - beta_glucosyltransferase
+  - dCMP_hydroxymethylase
