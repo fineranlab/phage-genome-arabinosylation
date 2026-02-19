@@ -9,9 +9,17 @@ This repository contains the code for the bioinformatics analysis included in [M
 * `envs/` - **conda** environment YAML files
 * `sys/` - **padloc** system definitions
 * `hmm/` - Protein profiles as Hidden Markov Models (HMM)
+* `examples/` - Genome FASTA files to run **padloc** on
 * `LICENSE` - The project license
 
 ## Usage
+This repository can be used as a [padloc database](https://github.com/padlocbio/padloc-db). The hmm models have been concatenated into padlocdb.hmm and tables for HMM metadata (hmm_meta.txt) and system metadata (sys_meta.txt) have been added.
+
+Padloc can be run on genome fasta files by setting this repository as the database:
+
+>  padloc --fna examples/LC53.fna --data . --outdir output
+
+## Analysis
 To reproduce the analysis please
 
 1. Install [conda](https://docs.conda.io/en/latest/miniconda.html#) (follow instructions and accept defaults)
