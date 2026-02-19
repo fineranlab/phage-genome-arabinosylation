@@ -40,12 +40,13 @@ To reproduce the analysis please
 1. Clone and enter the git repository (if you want to specify the directory replace '~' with your local path)
    ```
    cd ~
-   git clone https://github.com/fineranlab/arabinosylation-anti-CRISPR.git
+   git clone https://github.com/fineranlab/phage-genome-arabinosylation.git
    cd arabinosylation-anti-CRISPR
    ```
 1. Create conda environments
    ```
-   mamba env create -f envs/main.yml
+   mkdir .envs/
+   mamba env create --prefix .envs/main -f envs/main.yml
    ```
 1. Download genomes
    ```
