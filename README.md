@@ -22,6 +22,9 @@ mkdir output
 padloc --fna examples/LC53.fna --data . --outdir output
 ```
 
+> [!IMPORTANT]
+> This database is only compatible with [PADLOC](https://github.com/padlocbio/padloc) `>v2.0.0`.
+
 ## Analysis
 To reproduce the analysis please
 
