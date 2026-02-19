@@ -17,7 +17,10 @@ This repository can be used as a [padloc database](https://github.com/padlocbio/
 
 Padloc can be run on genome fasta files by setting this repository as the database:
 
->  padloc --fna examples/LC53.fna --data . --outdir output
+```
+mkdir output
+padloc --fna examples/LC53.fna --data . --outdir output
+```
 
 ## Analysis
 To reproduce the analysis please
