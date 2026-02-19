@@ -1,0 +1,17 @@
+hmm.accession	hmm.name	hmm.description	protein.name	secondary.name	author	e.value.threshold	hmm.coverage.threshold	target.coverage.threshold	literature.ref	database.ref	comment
+dCTPase	dCTPase	dCTPase	dCTPase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+beta_glucosyltransferase	beta_glucosyltransferase	beta_glucosyltransferase	beta_glucosyltransferase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+dCMP_hydroxymethylase	dCMP_hydroxymethylase	dCMP_hydroxymethylase	dCMP_hydroxymethylase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+DNA_pol	DNA_pol	DNA_pol	DNA_pol	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+alpha_glucosyltransferase	alpha_glucosyltransferase	alpha_glucosyltransferase	alpha_glucosyltransferase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+dNMP_kinase	dNMP_kinase	dNMP_kinase	dNMP_kinase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+arabinose_isomerase	arabinose_isomerase	arabinose_isomerase	arabinose_isomerase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+NTP_transferase	NTP_transferase	NTP_transferase	NTP_transferase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+phosphoheptose_isomerase	phosphoheptose_isomerase	phosphoheptose_isomerase	phosphoheptose_isomerase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+peptidase_U32	peptidase_U32	peptidase_U32	peptidase_U32	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+dCMP_hydroxylase	dCMP_hydroxylase	dCMP_hydroxylase	dCMP_hydroxylase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+putative_aat	putative_aat	putative_aat	putative_aat	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+thymidylate_kinase	thymidylate_kinase	thymidylate_kinase	thymidylate_kinase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+aat	aat	aat	aat	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+aat_2	aat_2	aat_2	aat_2	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+aat_1	aat_1	aat_1	aat_1	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA

@@ -4,7 +4,6 @@ minimum_core: 4
 minimum_total: 6
 core_genes:
   - thymidylate_kinase
-  - putative_glycosyltransferase
   - dCMP_hydroxylase
   - peptidase_U32
   - NTP_transferase
@@ -16,9 +15,10 @@ secondary_genes:
   - aat
   - aat_1
   - aat_2
+  - putative_aat
 neutral_genes:
   - NA
 prohibited_genes:
-  - dCMP_hydroxymethylase
   - alpha_glucosyltransferase
   - beta_glucosyltransferase
+  - dCMP_hydroxymethylase

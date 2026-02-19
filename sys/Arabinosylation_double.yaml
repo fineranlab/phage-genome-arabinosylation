@@ -6,7 +6,7 @@ core_genes:
   - aat
 secondary_genes:
   - thymidylate_kinase
-  - putative_glycosyltransferase
+  - putative_aat
   - dCMP_hydroxylase
   - peptidase_U32
   - NTP_transferase

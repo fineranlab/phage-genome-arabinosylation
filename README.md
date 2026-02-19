@@ -8,9 +8,24 @@ This repository contains the code for the bioinformatics analysis included in [M
 * `analysis/` - Analysis output (not included in **git**)
 * `envs/` - **conda** environment YAML files
 * `sys/` - **padloc** system definitions
+* `hmm/` - Protein profiles as Hidden Markov Models (HMM)
+* `examples/` - Genome FASTA files to run **padloc** on
 * `LICENSE` - The project license
 
 ## Usage
+This repository can be used as a [padloc database](https://github.com/padlocbio/padloc-db). The hmm models have been concatenated into padlocdb.hmm and tables for HMM metadata (hmm_meta.txt) and system metadata (sys_meta.txt) have been added.
+
+Padloc can be run on genome fasta files by setting this repository as the database:
+
+```
+mkdir output
+padloc --fna examples/LC53.fna --data . --outdir output
+```
+
+> [!IMPORTANT]
+> This database is only compatible with [PADLOC](https://github.com/padlocbio/padloc) `>v2.0.0`.
+
+## Analysis
 To reproduce the analysis please
 
 1. Install [conda](https://docs.conda.io/en/latest/miniconda.html#) (follow instructions and accept defaults)
@@ -28,12 +43,13 @@ To reproduce the analysis please
 1. Clone and enter the git repository (if you want to specify the directory replace '~' with your local path)
    ```
    cd ~
-   git clone https://github.com/fineranlab/arabinosylation-anti-CRISPR.git
+   git clone https://github.com/fineranlab/phage-genome-arabinosylation.git
    cd arabinosylation-anti-CRISPR
    ```
 1. Create conda environments
    ```
-   mamba env create -f envs/main.yml
+   mkdir .envs/
+   mamba env create --prefix .envs/main -f envs/main.yml
    ```
 1. Download genomes
    ```

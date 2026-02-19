@@ -35,7 +35,7 @@ dependencies:
   - r-irkernel
   - blast
   - r-rblast
-  - padloc
+  - padloc=2.0
   - r-bio3d
   - bioconductor-msa
   - r-ape
