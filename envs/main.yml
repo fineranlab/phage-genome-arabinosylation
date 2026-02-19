@@ -44,3 +44,6 @@ dependencies:
   - bioconductor-bluster
   - jellyfish
   - kraken2
+  - mmseqs2
+  - mash
+  - mummer
