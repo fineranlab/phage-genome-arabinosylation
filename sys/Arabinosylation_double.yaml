@@ -4,7 +4,7 @@ minimum_core: 4
 minimum_total: 6
 core_genes:
   - thymidylate_kinase
-  - putative_glycosyltransferase
+  - putative_aat
   - dCMP_hydroxylase
   - peptidase_U32
   - NTP_transferase
