@@ -1,5 +1,5 @@
 force_strand: FALSE
-maximum_separation: 100
+maximum_separation: 500
 minimum_core: 4
 minimum_total: 6
 core_genes:
@@ -19,6 +19,5 @@ secondary_genes:
 neutral_genes:
   - NA
 prohibited_genes:
-  - dCMP_hydroxymethylase
   - alpha_glucosyltransferase
   - beta_glucosyltransferase

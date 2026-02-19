@@ -14,7 +14,6 @@ neutral_genes:
   - NA
 prohibited_genes:
   - peptidase_U32
-  - dCMP_hydroxylase
   - arabinose_isomerase
   - phophoheptose_isomerase
   - NTP_transferase

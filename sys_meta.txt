@@ -1,0 +1,6 @@
+"system"	"yaml.name"	"search"	"comment"	"references"	"group"	"fill"	"stroke"
+"Glucosylation"	"Glucosylation"	TRUE	NA	"https://doi.org/10.1016/j.chom.2025.06.005"	"AntiDefense"	NA	NA
+"Arabinosylation_any"	"Arabinosylation_any"	TRUE	NA	"https://doi.org/10.1016/j.chom.2025.06.005"	"AntiDefense"	NA	NA
+"Arabinosylation_single"	"Arabinosylation_single"	TRUE	NA	"https://doi.org/10.1016/j.chom.2025.06.005"	"AntiDefense"	NA	NA
+"Arabinosylation_double"	"Arabinosylation_double"	TRUE	NA	"https://doi.org/10.1016/j.chom.2025.06.005"	"AntiDefense"	NA	NA
+"Arabinosylation_triple"	"Arabinosylation_triple"	TRUE	NA	"https://doi.org/10.1016/j.chom.2025.06.005"	"AntiDefense"	NA	NA

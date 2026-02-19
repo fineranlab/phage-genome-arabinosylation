@@ -1,0 +1,17 @@
+hmm.accession	hmm.name	hmm.description	protein.name	secondary.name	author	e.val.threshold	hmm.coverage.threshold	target.coverage.threshold	literature.ref	database.ref	comment
+dCTPase	dCTPase	dCTPase	dCTPase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+beta_glucosyltransferase	beta_glucosyltransferase	beta-glucosyl-transferase	beta-glucosyl-transferase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+dCMP_hydroxymethylase	dCMP_hydroxymethylase	dCMP hydroxymethylase	dCMP hydroxymethylase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+DNA_pol	DNA_pol	DNA polymerase	DNA polymerase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+alpha_glucosyltransferase	alpha_glucosyltransferase	alpha-glucosyl-transferase	alpha-glucosyl-transferase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+dNMP_kinase	dNMP_kinase	dNMP kinase	dNMP kinase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+arabinose_isomerase	arabinose_isomerase	arabinose isomerase	arabinose isomerase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+NTP_transferase	NTP_transferase	NTP transferase	NTP transferase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+phosphoheptose_isomerase	phosphoheptose_isomerase	phosphoheptose isomerase	phosphoheptose isomerase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+peptidase_U32	peptidase_U32	peptidase U32	peptidase U32	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+dCMP_hydroxylase	dCMP_hydroxylase	dCMP hydroxylase	dCMP hydroxylase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+putative_aat	putative_aat	putative glycosyltransferase	putative glycosyltransferase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+thymidylate_kinase	thymidylate_kinase	thymidylate kinase	thymidylate kinase	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+aat	aat	aat	aat	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+aat_2	aat_2	aat 2	aat 2	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA
+aat_1	aat_1	aat 1	aat 1	NA	Dietrich OD	1e-30	0.3	0.3	https://doi.org/10.1016/j.chom.2025.06.005	NA	NA

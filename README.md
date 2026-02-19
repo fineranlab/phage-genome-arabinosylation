@@ -8,6 +8,7 @@ This repository contains the code for the bioinformatics analysis included in [M
 * `analysis/` - Analysis output (not included in **git**)
 * `envs/` - **conda** environment YAML files
 * `sys/` - **padloc** system definitions
+* `hmm/` - Protein profiles as Hidden Markov Models (HMM)
 * `LICENSE` - The project license
 
 ## Usage
